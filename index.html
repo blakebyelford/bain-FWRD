@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blake Elford · Prepared for Bain FRWD</title>
+<meta name="description" content="An application portfolio for the Expert Consultant role at Bain & Company FRWD. Six years of B2B marketing, framed as case work.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #F6F1E8;
+  --paper-alt: #EDE6D8;
+  --paper-elevated: #FAF6EE;
+  --ink: #161210;
+  --ink-soft: #2A241F;
+  --gray: #5B5249;
+  --muted: #8C8275;
+  --border: #D4CCBE;
+  --border-soft: #E2DBCC;
+  --accent: #8B1F26;
+  --dark: #1A1614;
+  --dark-soft: #2B2520;
+  --dark-text: #F0E9DA;
+  --gold: #B89164;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--accent); color: var(--paper); }
+
+/* ---------- TYPOGRAPHY ---------- */
+.display {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+}
+.display-italic {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+}
+.mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.container-narrow {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.section {
+  padding: 96px 0;
+  position: relative;
+}
+.section-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* ---------- NAV ---------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 18px 32px;
+  background: rgba(246, 241, 232, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav.scrolled { border-bottom-color: var(--border); }
+.nav-mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.nav-mark::before {
+  content: 'BE';
+  font-style: normal;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3px 7px;
+  margin-right: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  vertical-align: 2px;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  font-size: 0.85rem;
+}
+.nav-links a {
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 80px;
+  position: relative;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: end;
+}
+.hero-eyebrow {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.hero-eyebrow .pill {
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 100px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+}
+.hero-eyebrow .pill-accent {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  margin-bottom: 28px;
+  font-feature-settings: "ss01";
+}
+.hero h1 em {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: 1.18rem;
+  color: var(--ink-soft);
+  max-width: 640px;
+  line-height: 1.5;
+  margin-bottom: 48px;
+}
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hero-meta-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.hero-meta-value {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.hero-meta-value a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s ease;
+}
+.hero-meta-value a:hover { border-bottom-color: var(--accent); }
+
+/* ---------- SECTION HEADERS ---------- */
+.section-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: baseline;
+  margin-bottom: 64px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.section-number {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 2.4rem;
+  color: var(--accent);
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+  line-height: 1;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-variation-settings: 'opsz' 144;
+}
+.section-intro {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin-bottom: 56px;
+  line-height: 1.55;
+}
+
+/* ---------- FRAMEWORK GRID ---------- */
+.framework-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+.framework-step {
+  padding: 36px 28px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--paper-elevated);
+  transition: background 0.3s ease;
+  position: relative;
+}
+.framework-step:hover { background: var(--paper-alt); }
+.framework-step-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: block;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+}
+.framework-step-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+.framework-step-body {
+  font-size: 0.92rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ---------- HERO CASE (AI AGENTS) ---------- */
+.hero-case {
+  background: var(--dark);
+  color: var(--dark-text);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-case::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.4;
+}
+.hero-case .section-number { color: var(--gold); }
+.hero-case .section-title { color: var(--paper); }
+.hero-case .eyebrow { color: var(--gold); }
+.hero-case-tag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(184, 145, 100, 0.3);
+}
+.hero-case-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin-bottom: 36px;
+  font-variation-settings: 'opsz' 144;
+}
+.hero-case-title em {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+  color: var(--gold);
+}
+.hero-case-sub {
+  font-size: 1.18rem;
+  color: rgba(240, 233, 218, 0.75);
+  max-width: 680px;
+  line-height: 1.55;
+  margin-bottom: 72px;
+}
+
+/* Agent diagram */
+.agent-diagram {
+  margin: 80px 0;
+  padding: 48px 32px;
+  background: var(--dark-soft);
+  border: 1px solid rgba(184, 145, 100, 0.2);
+  border-radius: 2px;
+  position: relative;
+}
+.agent-diagram-label {
+  position: absolute;
+  top: -10px;
+  left: 32px;
+  background: var(--dark);
+  padding: 0 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: rgba(184, 145, 100, 0.15);
+  margin-bottom: 40px;
+}
+.agent-card {
+  background: var(--dark-soft);
+  padding: 22px 20px;
+  transition: background 0.3s ease;
+}
+.agent-card:hover { background: #322a23; }
+.agent-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+  display: block;
+}
+.agent-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: var(--paper);
+  font-weight: 400;
+}
+.agent-role {
+  font-size: 0.82rem;
+  color: rgba(240, 233, 218, 0.6);
+  line-height: 1.45;
+}
+
+.workflow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 8px;
+  border-top: 1px solid rgba(184, 145, 100, 0.2);
+  flex-wrap: wrap;
+}
+.workflow-step {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 120px;
+}
+.workflow-step-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+}
+.workflow-step-name {
+  font-family: 'Fraunces', serif;
+  font-size: 0.95rem;
+  color: var(--paper);
+}
+.workflow-divider {
+  color: var(--gold);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+/* Case structure */
+.case-structure {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(184, 145, 100, 0.15);
+}
+.case-structure:last-child { border-bottom: none; }
+.case-structure-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-top: 6px;
+}
+.case-structure-body {
+  font-size: 1.05rem;
+  color: rgba(240, 233, 218, 0.88);
+  line-height: 1.65;
+}
+.case-structure-body p + p { margin-top: 14px; }
+.case-structure-body strong {
+  color: var(--paper);
+  font-weight: 500;
+}
+
+.for-frwd-dark {
+  margin-top: 64px;
+  padding: 32px;
+  background: rgba(184, 145, 100, 0.05);
+  border-left: 2px solid var(--gold);
+}
+.for-frwd-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.for-frwd-body {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--paper);
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 60;
+}
+
+/* ---------- STANDARD CASE STUDIES ---------- */
+.cases-section {
+  background: var(--paper);
+  padding: 120px 0;
+}
+.case-card {
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 64px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--border);
+}
+.case-card:last-of-type {
+  margin-bottom: 40px;
+  border-bottom: none;
+}
+.case-side {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+.case-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 4px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+}
+.case-title {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 18px;
+  font-variation-settings: 'opsz' 144;
+}
+.case-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.case-headline-stat {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  line-height: 1;
+  font-variation-settings: 'opsz' 144;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.case-headline-stat em {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+}
+.case-headline-desc {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+.case-block { margin-bottom: 36px; }
+.case-block-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.case-block-body {
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.case-block-body p + p { margin-top: 12px; }
+.case-block-body strong { font-weight: 600; color: var(--ink); }
+
+.for-frwd {
+  margin-top: 40px;
+  padding: 28px 32px;
+  background: var(--paper-alt);
+  border-left: 2px solid var(--accent);
+}
+.for-frwd-label-light {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.for-frwd-body-light {
+  font-family: 'Fraunces', serif;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 60;
+}
+
+/* ---------- STRATEGIC ACCOUNTS ---------- */
+.strategic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.strategic-card {
+  padding: 40px 36px;
+  background: var(--paper-elevated);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.strategic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(22, 18, 16, 0.06);
+}
+.strategic-card .case-tag { margin-bottom: 18px; }
+.strategic-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+.strategic-card p {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ---------- POV ESSAY ---------- */
+.pov-section {
+  background: var(--paper-alt);
+  padding: 120px 0;
+}
+.pov-essay {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.pov-eyebrow {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.pov-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin-bottom: 48px;
+  font-variation-settings: 'opsz' 144;
+}
+.pov-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+}
+.pov-body {
+  font-size: 1.12rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.pov-body p { margin-bottom: 22px; }
+.pov-body p:first-of-type::first-letter {
+  font-family: 'Fraunces', serif;
+  font-size: 4.5rem;
+  float: left;
+  line-height: 0.85;
+  margin: 8px 12px 0 -4px;
+  color: var(--accent);
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+}
+.pov-signature {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: right;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+/* ---------- ABOUT + CONTACT ---------- */
+.about-section { padding: 120px 0 80px; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-text p {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.about-text p:first-child {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--ink);
+  font-variation-settings: 'opsz' 144, 'SOFT' 80;
+  margin-bottom: 28px;
+}
+.contact-card {
+  padding: 40px;
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+}
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+}
+.contact-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.contact-title {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  font-variation-settings: 'opsz' 144;
+}
+.contact-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+}
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.contact-list li {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(240, 233, 218, 0.1);
+}
+.contact-list .contact-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 233, 218, 0.5);
+}
+.contact-list a {
+  color: var(--paper);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.contact-list a:hover { border-bottom-color: var(--gold); }
+.contact-note {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(240, 233, 218, 0.7);
+  line-height: 1.5;
+  padding-top: 8px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.05em;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ---------- ANIMATIONS ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger-1 { transition-delay: 0.1s; }
+.reveal-stagger-2 { transition-delay: 0.2s; }
+.reveal-stagger-3 { transition-delay: 0.3s; }
+.reveal-stagger-4 { transition-delay: 0.4s; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 880px) {
+  .container, .container-narrow { padding: 0 24px; }
+  .section { padding: 72px 0; }
+  .nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 110px 0 60px; min-height: auto; }
+  .hero h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .section-header {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .section-number { font-size: 1.4rem; }
+  .framework-grid { grid-template-columns: 1fr; }
+  .hero-case { padding: 80px 0; }
+  .hero-case-title { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .case-structure {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .case-structure-label { margin-bottom: 4px; }
+  .agent-diagram { padding: 36px 20px; }
+  .case-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 64px;
+    padding-bottom: 56px;
+  }
+  .case-side { position: static; }
+  .case-title { font-size: 1.6rem; }
+  .case-headline-stat { font-size: 2.4rem; }
+  .strategic-grid { grid-template-columns: 1fr; gap: 24px; }
+  .pov-section { padding: 80px 0; }
+  .about-section { padding: 80px 0 60px; }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .about-text p:first-child { font-size: 1.2rem; }
+  .contact-card { padding: 32px 28px; }
+  .contact-title { font-size: 1.6rem; }
+  .for-frwd, .for-frwd-dark { padding: 22px 24px; }
+  .workflow-arrow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .workflow-divider { transform: rotate(90deg); }
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-mark">Blake Elford</div>
+  <ul class="nav-links">
+    <li><a href="#framework">Framework</a></li>
+    <li><a href="#hero-case">GenAI Case</a></li>
+    <li><a href="#cases">Case Work</a></li>
+    <li><a href="#pov">POV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow reveal">
+          <span class="pill-accent pill">Application Portfolio</span>
+          <span class="pill">Bain &amp; Company &middot; FRWD</span>
+          <span class="pill">Expert Consultant</span>
+        </div>
+        <h1 class="display reveal reveal-stagger-1">
+          Built in the field. <br>
+          <em>Framed for FRWD.</em>
+        </h1>
+        <p class="hero-sub reveal reveal-stagger-2">
+          Six years of B2B marketing, from sole-marketer startup scrappiness through enterprise GTM, recast here as case work. Three diagnostics, one acceleration story, one operating-model fix, and an honest POV on where GenAI is heading.
+        </p>
+        <div class="hero-meta reveal reveal-stagger-3">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Candidate</span>
+            <span class="hero-meta-value">Blake W. Elford</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Based in</span>
+            <span class="hero-meta-value">Chicago, IL</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Email</span>
+            <span class="hero-meta-value"><a href="mailto:blakebyelford@gmail.com">blakebyelford@gmail.com</a></span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">LinkedIn</span>
+            <span class="hero-meta-value"><a href="https://linkedin.com/in/blakeelford" target="_blank" rel="noopener">/in/blakeelford</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FRAMEWORK ============ -->
+<section class="section" id="framework">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-number display-italic">01</span>
+      <div>
+        <div class="eyebrow" style="margin-bottom: 14px;">A Note on Method</div>
+        <h2 class="section-title">How I frame the work</h2>
+      </div>
+    </div>
+    <p class="section-intro reveal reveal-stagger-1">
+      Most of the marketing problems I have worked on were not, fundamentally, marketing problems. They were diagnosis problems. Wrong question, wrong target, wrong data, wrong sequence. The four-step lens below is how I have learned to take a vague brief and turn it into something testable.
+    </p>
+    <div class="framework-grid reveal reveal-stagger-2">
+      <div class="framework-step">
+        <span class="framework-step-num">i.</span>
+        <h3 class="framework-step-title">Frame</h3>
+        <p class="framework-step-body">Restate the brief as the question that, if answered, would actually move the business. "Cost per lead is high" is not a question. "Where is intent-channel-keyword mismatch driving wasted spend?" is.</p>
+      </div>
+      <div class="framework-step">
+        <span class="framework-step-num">ii.</span>
+        <h3 class="framework-step-title">Hypothesize</h3>
+        <p class="framework-step-body">Pick the most plausible leverage point and write it down. A wrong hypothesis written down is worth more than a hedged one held in your head. It forces a test you can lose.</p>
+      </div>
+      <div class="framework-step">
+        <span class="framework-step-num">iii.</span>
+        <h3 class="framework-step-title">Test</h3>
+        <p class="framework-step-body">Design the smallest move that proves or breaks the hypothesis. A re-segmented send. A keyword cluster rebuild. A workshop with twelve sellers. Bias toward the experiment that can run inside two weeks.</p>
+      </div>
+      <div class="framework-step">
+        <span class="framework-step-num">iv.</span>
+        <h3 class="framework-step-title">Operationalize</h3>
+        <p class="framework-step-body">If it worked, turn it into a system. Lead scoring. A new workflow. A documented playbook. Pilots that do not become operating models do not compound.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============ HERO CASE (AI AGENTS) ============ -->
+<section class="hero-case" id="hero-case">
+  <div class="container">
+    <div class="reveal">
+      <div class="hero-case-tag">Case 02 &middot; GenAI in Marketing</div>
+      <h2 class="hero-case-title">
+        An agency, <em>rebuilt</em><br>
+        as a multi-agent system.
+      </h2>
+      <p class="hero-case-sub">
+        At Life Fitness, I owned a $418M segment with no agency budget. So I built one. Ten Claude agents, each modeled after a real ad agency role, working in sequence to produce an integrated campaign brief in days instead of weeks.
+      </p>
+    </div>
+
+    <!-- Agent Diagram -->
+    <div class="agent-diagram reveal reveal-stagger-1">
+      <div class="agent-diagram-label">The Agent Stack &middot; 10 Roles</div>
+      <div class="agent-grid">
+        <div class="agent-card">
+          <span class="agent-num">01</span>
+          <div class="agent-name">Strategist</div>
+          <div class="agent-role">Frames the brief. Defines the marketing problem and what success looks like.</div>
+        </div>
+        <div class="agent-card">
+          <span class="agent-num">02</span>
+          <div class="agent-name">Researcher</div>
+          <div class="agent-role">Gathers competitive intel, audience insight, and third-party data into a single dossier.</div>
+        </div>
+        <div class="agent-card">
+          <span class="agent-num">03</span>
+          <div class="agent-name">Brand Planner</div>
+          <div class="agent-role">Pressure-tests positioning against brand strategy and category truths.</div>
+        </div>
+        <div class="agent-card">
+          <span class="agent-num">04</span>
+          <div class="agent-name">Creative Director</div>
+          <div class="agent-role">Sets the conceptual and visual direction. Owns the campaign idea.</div>
+        </div>
+        <div class="agent-card">
+          <span class="agent-num">05</span>
+          <div class="agent-name">Copywriter</div>
+          <div class="agent-role">Drafts messaging, headlines, body copy. Carries voice across channels.</div>
+        </div>
+        <div class="agent-card">
+          <span class="agent-num">06</span>
+          <div class="agent-name">Art Director</div>
+          <div class="agent-role">Translates concept into visual treatment, image references, layout logic.</div>
+        </div>
+        <div class="agent-card">
+          <span class="agent-num">07</span>
+          <div class="agent-name">Media Planner</div>
+          <div class="agent-role">Maps the campaign to channels, sequence, and audience priority.</div>
+        </div>
+        <div class="agent-card">
+          <span class="agent-num">08</span>
+          <div class="agent-name">Account Manager</div>
+          <div class="agent-role">Keeps the work on brief. Flags scope creep and missing inputs.</div>
+        </div>
+        <div class="agent-card">
+          <span class="agent-num">09</span>
+          <div class="agent-name">Editor</div>
+          <div class="agent-role">Tightens copy, kills clichés, enforces consistency across deliverables.</div>
+        </div>
+        <div class="agent-card">
+          <span class="agent-num">10</span>
+          <div class="agent-name">Critic</div>
+          <div class="agent-role">The contrarian. Stress-tests the idea against the strongest counter-argument.</div>
+        </div>
+      </div>
+
+      <div class="workflow-arrow">
+        <div class="workflow-step">
+          <span class="workflow-step-num">Input</span>
+          <span class="workflow-step-name">Brief</span>
+        </div>
+        <span class="workflow-divider">&rsaquo;&rsaquo;</span>
+        <div class="workflow-step">
+          <span class="workflow-step-num">Frame</span>
+          <span class="workflow-step-name">Strategist + Research</span>
+        </div>
+        <span class="workflow-divider">&rsaquo;&rsaquo;</span>
+        <div class="workflow-step">
+          <span class="workflow-step-num">Create</span>
+          <span class="workflow-step-name">CD + Copy + Art</span>
+        </div>
+        <span class="workflow-divider">&rsaquo;&rsaquo;</span>
+        <div class="workflow-step">
+          <span class="workflow-step-num">Plan</span>
+          <span class="workflow-step-name">Media + Account</span>
+        </div>
+        <span class="workflow-divider">&rsaquo;&rsaquo;</span>
+        <div class="workflow-step">
+          <span class="workflow-step-num">Refine</span>
+          <span class="workflow-step-name">Editor + Critic</span>
+        </div>
+        <span class="workflow-divider">&rsaquo;&rsaquo;</span>
+        <div class="workflow-step">
+          <span class="workflow-step-num">Output</span>
+          <span class="workflow-step-name">Campaign</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Structure -->
+    <div class="reveal">
+      <div class="case-structure">
+        <div class="case-structure-label">Situation</div>
+        <div class="case-structure-body">
+          <p>I owned U.S. segment marketing for Hospitality and Multi-Unit Housing at Life Fitness, a combined ~$418M serviceable market across 50,000 contacts in three sub-segments. The leadership ask: ship the segment's first full-funnel integrated campaign.</p>
+          <p>The constraint: no agency budget allocated. Conventional path was to hire one. The alternative was to slow the work to a crawl with freelance coordination.</p>
+        </div>
+      </div>
+
+      <div class="case-structure">
+        <div class="case-structure-label">Hypothesis</div>
+        <div class="case-structure-body">
+          <p>An agency is not a building. It is a sequence of specialists challenging each other inside a brief. If I could model that sequence as LLM agents with distinct roles and perspectives, an <strong>80/20 workflow</strong> could get to 80% of agency-grade output, then I would close the last 20% manually.</p>
+          <p>The bet was that the bottleneck was structured prompting, not model capability.</p>
+        </div>
+      </div>
+
+      <div class="case-structure">
+        <div class="case-structure-label">Approach</div>
+        <div class="case-structure-body">
+          <p>Defined ten agents, each with a role definition, perspective, and output spec mirroring real agency seats. Designed a sequenced workflow (frame &raquo; research &raquo; create &raquo; plan &raquo; challenge &raquo; refine) where each agent's output became the next agent's input.</p>
+          <p>Ran the system against the hospitality brief. Iterated. The Critic agent killed several first-draft ideas. The Strategist and Researcher together produced an audience dossier I would have paid an agency three weeks to deliver.</p>
+        </div>
+      </div>
+
+      <div class="case-structure">
+        <div class="case-structure-label">Outcome</div>
+        <div class="case-structure-body">
+          <p>Launched <strong>"A Stay That Moves You"</strong>, the segment's first full-funnel integrated campaign during my tenure. The system produced the concept, brief, and four messaging pillars. Execution rolled out across social, content and SEO, web, email, and trade media around a positioning shift from product-centric to operator-centric.</p>
+          <p>Leadership flagged it as something the company hadn't executed before in the segment. The agent workflow became the default starting point for subsequent campaign work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="for-frwd-dark reveal">
+      <div class="for-frwd-label">For FRWD</div>
+      <p class="for-frwd-body">
+        This is the GenAI-in-marketing capability FRWD's JD calls out, built and shipped in a real B2B context. When client teams ask "how do we use GenAI to accelerate marketing, not just save time?" the answer is rarely "we use ChatGPT for first drafts." It is structured agent systems that mirror how marketing work actually gets done.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+<section class="cases-section" id="cases">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-number display-italic">03</span>
+      <div>
+        <div class="eyebrow" style="margin-bottom: 14px;">Case Work</div>
+        <h2 class="section-title">Three FRWD-shaped cases</h2>
+      </div>
+    </div>
+    <p class="section-intro reveal reveal-stagger-1">
+      Each of the three below maps to a workstream type FRWD names explicitly. Each is real, mine, and quantified where the data exists.
+    </p>
+
+    <!-- CASE: Diagnostic -->
+    <div class="case-card reveal">
+      <aside class="case-side">
+        <span class="case-tag">Marketing Diagnostic</span>
+        <h3 class="case-title">A 90% drop in CPL by re-framing the question.</h3>
+        <div class="case-meta">Fuel Me &middot; 2021&ndash;22</div>
+        <div class="case-headline-stat">$900 <em>&rarr;</em> $90</div>
+        <div class="case-headline-desc">Cost per lead, before and after.</div>
+      </aside>
+      <div>
+        <div class="case-block">
+          <div class="case-block-label">Situation</div>
+          <div class="case-block-body">
+            <p>Fuel Me's Google Ads spend was consistently producing leads at <strong>~$900 CPL</strong>, with mid-quality output and growing friction from sales over lead fit. The default conversation in the room was about budget and bid strategy.</p>
+          </div>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label">Hypothesis</div>
+          <div class="case-block-body">
+            <p>The problem wasn't spend or bids. It was <strong>intent-channel-keyword mismatch</strong>. Too many high-funnel and informational keywords were pulling in buyers who weren't actually evaluating fuel logistics software. Reframing the keyword set around buyer intent stage, not product feature, should compress CPL and improve quality at the same time.</p>
+          </div>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label">Approach</div>
+          <div class="case-block-body">
+            <p>Audited the full keyword set and mapped each to buyer intent. Eliminated broad and informational terms. Rebuilt campaign architecture around intent clusters, not feature themes. Led the optimization sprint through an offshore execution team with a documented playbook and weekly check-ins.</p>
+          </div>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label">Outcome</div>
+          <div class="case-block-body">
+            <p>CPL fell from <strong>~$900 to ~$90</strong>, a 90% reduction, with simultaneous lead-quality improvement per sales feedback. The reframing also fed into broader content and SEO strategy. The diagnostic mindset, not the bid optimization, was the unlock.</p>
+          </div>
+        </div>
+        <div class="for-frwd">
+          <div class="for-frwd-label-light">For FRWD</div>
+          <p class="for-frwd-body-light">Most paid-media diagnostics start with the wrong question. "Are we spending the right amount?" almost never opens the door. "Is our targeting hypothesis correct?" almost always does. That reframing is consulting work, not media work.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE: Acceleration -->
+    <div class="case-card reveal">
+      <aside class="case-side">
+        <span class="case-tag">Marketing Acceleration</span>
+        <h3 class="case-title">$670K in pipeline from a single seller-led send.</h3>
+        <div class="case-meta">Life Fitness &middot; 2025</div>
+        <div class="case-headline-stat">34 <em>opps</em></div>
+        <div class="case-headline-desc">From 8,000+ targeted contacts, sent from sellers' own accounts.</div>
+      </aside>
+      <div>
+        <div class="case-block">
+          <div class="case-block-label">Situation</div>
+          <div class="case-block-body">
+            <p>Life Fitness's Multi-Unit Housing segment had a warranty-related promotional opportunity. The default would have been a centralized marketing email to the database. But MUH buyers, property owners and multi-family operators, respond to seller relationships, not corporate sends.</p>
+          </div>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label">Hypothesis</div>
+          <div class="case-block-body">
+            <p>A hybrid model would beat either pure approach: <strong>marketing-built automation for scale and segmentation, delivered from inside sellers' actual accounts</strong>, so it landed as a personalized note from a real human the buyer already knew.</p>
+          </div>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label">Approach</div>
+          <div class="case-block-body">
+            <p>Built the full workflow in Pardot Engagement Studio. Partnered with three inside sellers to send from their accounts. Sourced 8,000+ targeted contacts via Salesforce + ZoomInfo enrichment. Designed segmentation logic by account type and pipeline stage to keep messaging relevant at the recipient level.</p>
+          </div>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label">Outcome</div>
+          <div class="case-block-body">
+            <p><strong>34 new opportunities. $670K+ in attributed pipeline</strong> from a single campaign. The bigger unlock was validation: the seller-led automation pattern became reusable across the segment, and downstream campaigns built on the same model.</p>
+          </div>
+        </div>
+        <div class="for-frwd">
+          <div class="for-frwd-label-light">For FRWD</div>
+          <p class="for-frwd-body-light">B2B acceleration isn't about scale. It's about pairing scale infrastructure (automation, data, segmentation) with relationship-led delivery. Most B2B SaaS and industrial clients have one but not the other.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE: Operating Model -->
+    <div class="case-card reveal">
+      <aside class="case-side">
+        <span class="case-tag">Operating Model &middot; MarTech</span>
+        <h3 class="case-title">From one-size-fits-all to stage-aware nurture.</h3>
+        <div class="case-meta">Life Fitness &middot; 2024&ndash;25</div>
+        <div class="case-headline-stat">50% <em>&rarr;</em> 13%</div>
+        <div class="case-headline-desc">Hospitality CRM contacts missing job titles, before and after enrichment.</div>
+      </aside>
+      <div>
+        <div class="case-block">
+          <div class="case-block-label">Situation</div>
+          <div class="case-block-body">
+            <p>Two silent failures were undermining hospitality marketing performance. First, <strong>~50% of CRM contacts were missing job titles</strong>, which made role-based segmentation impossible. Second, Pardot was sending the same nurture sequences regardless of funnel stage. Awareness contacts and decision-stage contacts got the same email.</p>
+          </div>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label">Hypothesis</div>
+          <div class="case-block-body">
+            <p>The tools were not the problem. <strong>The connective tissue between them was.</strong> Fix the data quality first, then layer in funnel-stage logic. Both gains would compound: better segmentation only matters if the messaging meets the stage, and stage-aware messaging only works if you can target the right roles.</p>
+          </div>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label">Approach</div>
+          <div class="case-block-body">
+            <p>Ran a data quality diagnostic and quantified the title gap. Partnered with RevOps and ZoomInfo to design and execute an enrichment run, taking missing titles from ~50% to ~13%. Then built a funnel-stage tracking system in Pardot using lead scoring, behavioral triggers, and engagement metrics, so contacts moved through stage-appropriate flows automatically.</p>
+          </div>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label">Outcome</div>
+          <div class="case-block-body">
+            <p>Role-based segmentation became possible for the first time in the segment. Stage-aware nurture replaced the one-size-fits-all sends. The funnel-stage system became foundational for subsequent campaigns, including the $670K MUH warranty case above.</p>
+          </div>
+        </div>
+        <div class="for-frwd">
+          <div class="for-frwd-label-light">For FRWD</div>
+          <p class="for-frwd-body-light">This is the unglamorous high-leverage work most B2B clients need and few prioritize: data quality, stage logic, and the connective tissue between MarTech tools. The diagnostic muscle here is the same one FRWD's operating-model engagements call for.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============ STRATEGIC ACCOUNTS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-number display-italic">04</span>
+      <div>
+        <div class="eyebrow" style="margin-bottom: 14px;">Selected Engagements</div>
+        <h2 class="section-title">Two moments worth naming</h2>
+      </div>
+    </div>
+    <p class="section-intro reveal reveal-stagger-1">
+      Two enterprise account engagements that felt closer to consulting than to marketing. Each is named honestly: workshop facilitation, narrative construction, and strategic framework development, not co-branded campaigns.
+    </p>
+    <div class="strategic-grid">
+      <div class="strategic-card reveal">
+        <span class="case-tag">Enterprise Account Strategy</span>
+        <h3>Marriott senior leadership hub visit.</h3>
+        <p>Planned and helped facilitate a strategic hub visit with Marriott's senior luxury and upper-upscale leadership. Designed the session beyond product demos to include structured workshops: brand matrix mapping across Marriott's portfolio, persona development, and "wow moments" ideation. Translated the takeaways into a positioning framework organized by brand identity (Personal/Restorative vs Social/Expressive) and turned that into seed concepts for 2026 campaigns. Marriott's team described Life Fitness as "the hospitality company" after the visit, a relationship signal, not a transaction.</p>
+      </div>
+      <div class="strategic-card reveal reveal-stagger-1">
+        <span class="case-tag">Insight-Led Pitch Narrative</span>
+        <h3>$700K+/year Mill Creek RFP.</h3>
+        <p>Built the strategic narrative for a $700K+/year key account RFP. Synthesized third-party research from McKinsey, the Global Wellness Institute, Murphy Research, and ACSM into a consultative, insight-led pitch: wellness real estate trends, resident demographics, the rise of strength training, layout philosophy, and ADA compliance. The narrative set the stage for the product, digital technology, and design sessions that followed, with every later module tying back to the trends framework.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POV ESSAY ============ -->
+<section class="pov-section" id="pov">
+  <div class="container-narrow pov-essay">
+    <div class="reveal">
+      <div class="pov-eyebrow eyebrow">Point of View &middot; 05</div>
+      <h2 class="pov-title">
+        What GenAI <em>changes</em> for B2B marketing<br>
+        (and what it doesn't).
+      </h2>
+    </div>
+    <div class="pov-body reveal reveal-stagger-1">
+      <p>The framing I keep hearing, agencies are being replaced by AI, is the wrong frame. It points at the wrong outcome, and it lets the more interesting question go unanswered. The more interesting question is whether GenAI changes what kind of marketer wins.</p>
+      <p>My honest read, after building a ten-agent system that produced the better part of an integrated campaign: the bottleneck inside a B2B marketing team has rarely been creative output. It has been access to structured expert thinking. Strategy. Brand planning. Critical pressure on a weak idea. Most B2B marketers can write a decent brief. Most cannot afford to have a real strategist, a real brand planner, and a real contrarian in the room every time they need one.</p>
+      <p>That is what agentic systems actually unlock. Not faster copy. Not cheaper banners. Access to the seats around the table that B2B marketers have historically had to choose between or do without. The 80/20 rule applies: 80% of the value of an agency is structured argument, not finished assets.</p>
+      <p>The marketers who win the next five years will be the ones who can <em>orchestrate</em> that argument well. Frame the brief precisely. Pick the right agents for the question. Read their outputs critically. Close the last 20% themselves. That is a skill that looks a lot more like consulting than it looks like content marketing.</p>
+      <p>Which is part of why FRWD is interesting to me. The discipline that GenAI rewards in B2B is, increasingly, the discipline FRWD already practices.</p>
+      <div class="pov-signature">&mdash; B.E.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT + CONTACT ============ -->
+<section class="about-section" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-number display-italic">06</span>
+      <div>
+        <div class="eyebrow" style="margin-bottom: 14px;">About &middot; Contact</div>
+        <h2 class="section-title">The short version</h2>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I spent five years as the only marketer at a B2B SaaS startup, building everything from CRM to demand gen to brand, then moved to the enterprise side to learn how the other half operates.</p>
+        <p>At Fuel Me I was the sole in-house marketer from early stage through the $18M Series A, owning CRM selection, demand generation, content, paid, and brand. I built the email program from scratch, took CPL from ~$900 to ~$90, and helped land enterprise customers including Lidl, Kroger, and Digital Realty.</p>
+        <p>At Life Fitness I traded scrappiness for scale: a $418M serviceable segment, a 50,000-contact database, strategic accounts like Marriott and Mill Creek, and the kind of cross-functional alignment work that lives or dies on stakeholder management. The work that taught me the most was the work closest to consulting: diagnostics, narrative construction, operating-model fixes, GenAI capability building.</p>
+        <p>I am applying to FRWD because the through line of my best work is the work FRWD does, just done in-house. I would like to do it on harder, more varied problems, with sharper colleagues.</p>
+      </div>
+      <div class="contact-card reveal reveal-stagger-1">
+        <div class="contact-eyebrow">Reach Out</div>
+        <h3 class="contact-title">I'd welcome <em>a conversation</em> about FRWD.</h3>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:blakebyelford@gmail.com">blakebyelford@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+12819288447">(281) 928-8447</a>
+          </li>
+          <li>
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://linkedin.com/in/blakeelford" target="_blank" rel="noopener">/in/blakeelford</a>
+          </li>
+          <li>
+            <span class="contact-label">Based</span>
+            <span style="color: var(--paper);">Chicago, IL</span>
+          </li>
+        </ul>
+        <p class="contact-note">Open to remote and hybrid roles. Available for conversations through email or LinkedIn at any time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer">
+      <span>&copy; 2026 Blake W. Elford &middot; Prepared for Bain &amp; Company FRWD</span>
+      <span>Chicago, IL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
